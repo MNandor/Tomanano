@@ -1,0 +1,4 @@
+Installation face_recognition 
+
+1. pip install cmake
+2. pip install face_recognition
