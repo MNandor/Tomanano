@@ -14,13 +14,13 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 		if(db_join($user_email, $room_id) == true)
 		{
 			$result = array();
-			$result["success"] = "1";
+			$result["success"] = 1;
 			echo json_encode($result);
 		}
 		else
 		{
 			$result = array();
-			$result["success"] = "0";
+			$result["success"] = 0;
 			echo json_encode($result);
 		}
 	}

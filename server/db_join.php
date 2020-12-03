@@ -79,6 +79,14 @@ function db_access_room($roomid)
 /*This function let the users join in the room if every data is OK*/
 function db_join($email, $roomid)
 {
+	if(filter_var($roomid, FILTER_VALIDATE_INT) != true)
+	{
+		return false;
+	}
+	if($roomid < 1)
+	{
+		return false;
+	}
 	$con = connect();
 	if(!$con)
 	{
