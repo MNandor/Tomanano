@@ -21,10 +21,10 @@
         app:layout_constraintVertical_bias="0.89" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonRooms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="Rooms"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +106,7 @@
         android:background="@color/white"
         android:ems="10"
         android:hint="Start time"
-        android:inputType="date"
+        android:inputType="textPersonName"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,7 +121,7 @@
         android:background="@color/white"
         android:ems="10"
         android:hint="End time"
-        android:inputType="date"
+        android:inputType="textPersonName"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

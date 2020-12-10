@@ -76,11 +76,12 @@
                 android:layout_marginTop="6dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/loginEmailET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_baseline_person_24"
                     android:drawablePadding="10dp"
-                    android:hint="Name"
+                    android:hint="Email"
                     android:paddingStart="6dp"
                     android:paddingEnd="6dp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -92,6 +93,7 @@
                 android:layout_marginBottom="24dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/loginPasswordET"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_baseline_lock_24"
