@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.annotation.MainThread
 import com.example.tomanano.retrofit.RetroRepo
 import kotlinx.android.synthetic.main.activity_register.*
 
@@ -13,7 +14,7 @@ class Register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        buttonRegToLog.setOnClickListener {
+        buttonRegister.setOnClickListener {
             //onBackPressed()
             //startActivity(Intent(this,Login::class.java))
 
@@ -24,11 +25,18 @@ class Register : AppCompatActivity() {
 
                 var k = c.execute()
 
-                Log.i("ducks", k.body()!!.responseCode.toString())
 
+                var code = k.body()!!.responseCode
+
+                if (code != 0) //if successful
+                    runOnUiThread{onBackPressed()}
 
 
             }).start()
+        }
+
+        buttonRegToLog.setOnClickListener{
+            onBackPressed()
         }
     }
 

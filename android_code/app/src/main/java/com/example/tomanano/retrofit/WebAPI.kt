@@ -22,4 +22,12 @@ public interface WebAPI {
         fun makeRoom(@Query("user_email") email:String, @Query("room_name") roomname:String,
                  @Query("start_date") startDate:String,  @Query("end_date") endDate:String,
                      @Query("request_type") type:String="3"): Call<APIResponse>
+
+    @GET("join.php")
+        fun joinRoom(@Query("user_email") email:String, @Query("room_id") id: Int, @Query("request_type") type:String="4"):
+            Call<APIResponse>
+
+    @GET("roomlist.php")
+    fun getRooms(@Query("user_email") email:String, @Query("request_type") type:String="7")
+        : Call<List<RoomData>>
 }
