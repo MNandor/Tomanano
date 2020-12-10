@@ -10,6 +10,7 @@ import com.example.tomanano.retrofit.RetroRepo
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_room.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,6 +56,10 @@ class MainActivity : AppCompatActivity() {
 
 
             }).start()
+        }
+
+        cameraButton.setOnClickListener {
+            //@Endre do your thing here
         }
 
         buttonRooms.setOnClickListener {
