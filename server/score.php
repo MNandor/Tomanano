@@ -1,18 +1,19 @@
 <?php
 include "db_connect.php";
-include "db_reglog.php";
+include "db_score.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'GET')
 {
 	$request_type = $_GET['request_type'];
 	
-	if($request_type == 1)
+	if($request_type == 5)
 	{
-		$user_name = $_GET['user_name'];
 		$user_email = $_GET['user_email'];
-		$user_pw = $_GET['user_pw'];
+		$room_id = $_GET['room_id'];
+		$photos = $_GET['photos'];
+		$persons = $_GET['persons'];
 		
-		if(user_registration($user_name, $user_email, $user_pw) == true)
+		if(db_update_score($user_email, $room_id, $photos, $persons) == true)
 		{
 			$result = array();
 			$result["success"] = 1;

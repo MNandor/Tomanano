@@ -16,13 +16,13 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 			if(db_get_userid($user_email) > 0)
 			{
 				$result = array();
-				$result["success"] = db_get_userid($user_email);
+				$result["success"] = (int)db_get_userid($user_email);
 				echo json_encode($result);
 			}
 			else
 			{
 				$result = array();
-				$result["success"] = "0";
+				$result["success"] = 0;
 				echo json_encode($result);
 			}
 			
@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 		else
 		{
 			$result = array();
-			$result["success"] = "0";
+			$result["success"] = 0;
 			echo json_encode($result);
 		}
 	}

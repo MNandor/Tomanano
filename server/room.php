@@ -19,20 +19,20 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
 			if($res != false)
 			{
 				$result = array();
-				$result["success"] = $res; /*returning the room ID*/
+				$result["success"] = (int)$res; /*returning the room ID*/
 				echo json_encode($result);
 			}
 			else
 			{
 				$result = array();
-				$result["success"] = "-1";
+				$result["success"] = 0;
 				echo json_encode($result);
 			}
 		}
 		else
 		{
 			$result = array();
-			$result["success"] = "-2";
+			$result["success"] = 0;
 			echo json_encode($result);
 		}
 	}
