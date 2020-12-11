@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tomanano.retrofit.RetroRepo
 import kotlinx.android.synthetic.main.activity_room.*
+import android.widget.Toast
 
 class Room : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +18,27 @@ class Room : AppCompatActivity() {
 
         if(resultInfo > 0){
             Log.d("Room", "This is return value, number of faces = ${resultInfo}")
+
+            Thread(Runnable {
+                var r = RetroRepo()
+                var c = r.getRepo().sendRes(Login.myEmail!!, roomID!!, 1, resultInfo)
+
+
+                var k = c.execute()
+
+
+                var res = k.body()!!.responseCode
+
+
+                runOnUiThread {
+                    Toast.makeText(this@Room, res!!.toString(), Toast.LENGTH_LONG).show()
+                }
+
+
+            }).start()
+
+
+
         }else{
             Log.d("Room", "Error")
         }
@@ -39,6 +61,7 @@ class Room : AppCompatActivity() {
                 return@Runnable
 
             var room = rooms[0]
+            roomID = room.roomID!!.toInt()
 
             runOnUiThread {
                 addRoomName.text = room.roomName
@@ -54,5 +77,9 @@ class Room : AppCompatActivity() {
             val intent = Intent(this, Camera::class.java)
             startActivity(intent)
         }
+    }
+
+    companion object{
+        var roomID: Int? = null
     }
 }

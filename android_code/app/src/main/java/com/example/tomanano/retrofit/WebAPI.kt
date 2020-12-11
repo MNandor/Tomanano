@@ -30,4 +30,10 @@ public interface WebAPI {
     @GET("roomlist.php")
     fun getRooms(@Query("user_email") email:String, @Query("request_type") type:String="7")
         : Call<List<RoomData>>
+
+    @GET("score.php")
+    fun sendRes(@Query("user_email") email:String, @Query("room_id") id:Int,
+                @Query("photos") photos:Int, @Query("persons") persons:Int,
+                @Query("request_type") type:String="5")
+    : Call<APIResponse>
 }
