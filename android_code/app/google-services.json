@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "226926821765",
+    "project_id": "tomanano-48683",
+    "storage_bucket": "tomanano-48683.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226926821765:android:3b9df45a88ee64a086c4ec",
+        "android_client_info": {
+          "package_name": "com.example.tomanano"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226926821765-kf2l8k3hqq8pidnnk1a0b51k8ues3qk2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzjQwMwYc8oSDWexA2gbLbMVvzuUvibMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "226926821765-kf2l8k3hqq8pidnnk1a0b51k8ues3qk2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

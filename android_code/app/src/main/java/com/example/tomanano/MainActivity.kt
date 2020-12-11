@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import com.example.tomanano.retrofit.RetroRepo
+import com.google.firebase.FirebaseApp
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_register.*
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        FirebaseApp.initializeApp(this);
 
         buttonJoinRoom.setOnClickListener{
             Thread(Runnable {
@@ -58,16 +61,11 @@ class MainActivity : AppCompatActivity() {
             }).start()
         }
 
-        cameraButton.setOnClickListener {
-            //@Endre do your thing here
-        }
+
 
         buttonRooms.setOnClickListener {
             startActivity(Intent(this, Room::class.java))
 
         }
-
     }
-
-
 }
